@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "WASM build of OpenJPEG",
   "main": "dist/openjpegjs.js",
+  "browser": "dist/openjpegjs.web.js",
   "directories": {
     "test": "test"
   },

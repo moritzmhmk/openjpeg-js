@@ -1,3 +1,5 @@
+  option(BUILD_WEB "build for web environment")
+
   add_executable(openjpegjs jslib.cpp)
 
   target_link_libraries(openjpegjs PRIVATE openjp2)
@@ -12,9 +14,29 @@
   
   # add include path to openjpeg
   include_directories("../extern/openjpeg/src/lib/openjp2" "../build/extern/openjpeg/src/lib/openjp2")
-  
-  set_target_properties(
-    openjpegjs 
+
+  if(BUILD_WEB)
+    set_target_properties(
+      openjpegjs 
+      PROPERTIES 
+      LINK_FLAGS "\
+        --bind \
+        -s DISABLE_EXCEPTION_CATCHING=1 \
+        -s ASSERTIONS=0 \
+        -s NO_EXIT_RUNTIME=1 \
+        -s MALLOC=emmalloc \
+        -s ALLOW_MEMORY_GROWTH=1 \
+        -s TOTAL_MEMORY=1073741824 \
+        -s FILESYSTEM=0 \
+        -s EXPORTED_FUNCTIONS=[] \
+        -s EXPORTED_RUNTIME_METHODS=[ccall] \
+        -s MODULARIZE=1 \
+        -s EXPORT_NAME=OpenJPEGWASM \
+        -s ENVIRONMENT=web \
+      ")
+  else()
+    set_target_properties(
+      openjpegjs 
       PROPERTIES 
       LINK_FLAGS "\
         --bind \
@@ -30,4 +52,5 @@
         -s MODULARIZE=1 \
         -s EXPORT_NAME=OpenJPEGWASM \
     ")
+  endif()
   
