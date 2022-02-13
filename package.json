@@ -1,5 +1,5 @@
 {
-  "name": "openjpegjs",
+  "name": "openjpeg",
   "version": "1.0.0",
   "description": "WASM build of OpenJPEG",
   "main": "dist/openjpegjs.js",
