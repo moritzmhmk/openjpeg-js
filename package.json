@@ -1,0 +1,28 @@
+{
+  "name": "openjpegjs",
+  "version": "1.0.0",
+  "description": "WASM build of OpenJPEG",
+  "main": "dist/openjpegjs.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moritzmhmk/openjpegjs.git"
+  },
+  "keywords": [
+    "JPEG",
+    "OpenJPEG",
+    "JPEG-2000",
+    "DICOM"
+  ],
+  "author": "Chris Hafey <chafey@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/moritzmhmk/openjpegjs/issues"
+  },
+  "homepage": "https://github.com/moritzmhmk/openjpegjs#readme"
+}
