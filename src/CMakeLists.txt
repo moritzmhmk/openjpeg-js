@@ -31,6 +31,7 @@
         -s EXPORTED_FUNCTIONS=[] \
         -s EXPORTED_RUNTIME_METHODS=[ccall] \
         -s MODULARIZE=1 \
+        -s EXPORT_ES6=1 \
         -s EXPORT_NAME=OpenJPEGWASM \
         -s ENVIRONMENT=web \
       ")
